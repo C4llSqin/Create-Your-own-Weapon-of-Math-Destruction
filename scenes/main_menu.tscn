@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2r7v8f7nes71"]
+[gd_scene load_steps=3 format=3 uid="uid://b2r7v8f7nes71"]
 
 [ext_resource type="PackedScene" uid="uid://x3dpr6ldtqxa" path="res://scenes/game_manager.tscn" id="1_f5x0h"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_uut7l"]
+size = Vector2(45, 29)
 
 [node name="Main menu" type="Control"]
 layout_mode = 3
@@ -10,12 +13,53 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="GameManager" parent="." instance=ExtResource("1_f5x0h")]
+layout_mode = 1
+
+[node name="MenuButton" type="MenuButton" parent="."]
+layout_mode = 0
+offset_left = 680.0
+offset_top = 720.0
+offset_right = 890.0
+offset_bottom = 820.0
+text = "Flish"
+icon = SubResource("PlaceholderTexture2D_uut7l")
+alignment = 0
+item_count = 13
+popup/item_0/text = "Spin"
+popup/item_0/id = 0
+popup/item_1/text = "Spun"
+popup/item_1/id = 1
+popup/item_1/disabled = true
+popup/item_2/text = ""
+popup/item_2/id = 2
+popup/item_3/text = ""
+popup/item_3/id = 3
+popup/item_4/text = ""
+popup/item_4/id = 4
+popup/item_5/text = ""
+popup/item_5/id = 5
+popup/item_6/text = ""
+popup/item_6/id = 6
+popup/item_7/text = ""
+popup/item_7/id = 7
+popup/item_8/text = ""
+popup/item_8/id = 8
+popup/item_9/text = ""
+popup/item_9/id = 9
+popup/item_10/text = ""
+popup/item_10/id = 10
+popup/item_11/text = ""
+popup/item_11/id = 11
+popup/item_12/text = ""
+popup/item_12/id = 12
+
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 298.0
-offset_top = 162.0
-offset_right = 629.0
-offset_bottom = 382.0
+offset_left = 230.0
+offset_top = 335.0
+offset_right = 561.0
+offset_bottom = 555.0
 bbcode_enabled = true
 text = "[wave]hello[/wave] wasup.
 
@@ -31,6 +75,3 @@ klda;s
 kldsa;
 kl;dsa
 kl';das"
-
-[node name="GameManager" parent="." instance=ExtResource("1_f5x0h")]
-layout_mode = 1

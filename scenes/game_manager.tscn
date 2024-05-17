@@ -29,10 +29,12 @@ texture = ExtResource("2_4h5ai")
 
 [node name="terminal_title" type="RichTextLabel" parent="Terminal"]
 offset_left = 840.0
+offset_top = -5.0
 offset_right = 1080.0
-offset_bottom = 115.0
+offset_bottom = 45.0
 bbcode_enabled = true
 text = "[center][font_size=34][color=yellow]Terminal[/color][/font_size][/center]"
+scroll_active = false
 
 [node name="contents" type="RichTextLabel" parent="Terminal"]
 offset_left = 200.0
