@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://x3dpr6ldtqxa"]
+
+[node name="GameManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.259294, 0.259294, 0.259294, 1)
+
+[node name="Text log" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_right = 1728.0
+offset_bottom = 216.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Text log"]
+layout_mode = 0
+offset_right = 1536.0
+offset_bottom = 216.0
+bbcode_enabled = true
+text = "[font_size=24][wave]Hello this is an log entry[/wave][/font_size] small"

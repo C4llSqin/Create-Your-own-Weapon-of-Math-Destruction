@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2r7v8f7nes71"]
+
+[ext_resource type="PackedScene" uid="uid://x3dpr6ldtqxa" path="res://scenes/game_manager.tscn" id="1_f5x0h"]
+
+[node name="Main menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 298.0
+offset_top = 162.0
+offset_right = 629.0
+offset_bottom = 382.0
+bbcode_enabled = true
+text = "[wave]hello[/wave] wasup.
+
+
+
+asdki;sa
+kdl;sa
+
+kdlas;
+kdl;as
+kdla;s
+klda;s
+kldsa;
+kl;dsa
+kl';das"
+
+[node name="GameManager" parent="." instance=ExtResource("1_f5x0h")]
+layout_mode = 1
