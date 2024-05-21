@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvs8xooyxm44y"]
+
+[ext_resource type="Texture2D" uid="uid://dwvbi8gy1u0uv" path="res://assets/button_random.png" id="1_emhmn"]
+
+[node name="WoMdMenuButton" type="Control"]
+clip_contents = true
+layout_mode = 3
+offset_right = 48.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(8, 8)
+texture = ExtResource("1_emhmn")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_right = 144.0
+offset_bottom = 32.0
+scale = Vector2(0.25, 0.25)
+bbcode_enabled = true
+text = "[rainbow][wave][center][font_size=24]intetelect[/font_size][/center]
+"
+scroll_active = false

@@ -23,7 +23,7 @@ func _process(delta):
 		frame = 0
 		return
 	if frame % 10 == 0:
-		print(textbox.visible_characters)
+		#print(textbox.visible_characters)
 		textbox.visible_characters += 1
 	frame += 1
 	pass

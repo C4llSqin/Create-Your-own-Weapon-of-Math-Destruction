@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2r7v8f7nes71"]
+[gd_scene load_steps=4 format=3 uid="uid://b2r7v8f7nes71"]
 
 [ext_resource type="PackedScene" uid="uid://x3dpr6ldtqxa" path="res://scenes/game_manager.tscn" id="1_f5x0h"]
+[ext_resource type="Texture2D" uid="uid://dwvbi8gy1u0uv" path="res://assets/button_random.png" id="2_tk12h"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_uut7l"]
-size = Vector2(45, 29)
+[sub_resource type="Theme" id="Theme_wym0f"]
 
 [node name="Main menu" type="Control"]
 layout_mode = 3
@@ -17,14 +17,21 @@ grow_vertical = 2
 layout_mode = 1
 
 [node name="MenuButton" type="MenuButton" parent="."]
+visible = false
+texture_filter = 1
 layout_mode = 0
-offset_left = 680.0
+offset_left = 360.0
 offset_top = 720.0
-offset_right = 890.0
-offset_bottom = 820.0
-text = "Flish"
-icon = SubResource("PlaceholderTexture2D_uut7l")
+offset_right = 600.0
+offset_bottom = 800.0
+theme = SubResource("Theme_wym0f")
+text = "[color=green]Flish[/color]
+
+
+"
+icon = ExtResource("2_tk12h")
 alignment = 0
+expand_icon = true
 item_count = 13
 popup/item_0/text = "Spin"
 popup/item_0/id = 0
@@ -55,6 +62,7 @@ popup/item_12/text = ""
 popup/item_12/id = 12
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 230.0
 offset_top = 335.0
