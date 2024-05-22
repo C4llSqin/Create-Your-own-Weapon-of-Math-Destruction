@@ -1,13 +1,13 @@
 extends Control
 
-var buttons
-var terminal
-var button_box
-var term_sheild
-var background
-var pause_menu
-var paused
-var senario
+var buttons: Array[WoMDButton]
+var terminal: Node
+var button_box: Sprite2D
+var term_sheild: Sprite2D
+var background: Sprite2D
+var pause_menu: Control
+var paused: bool
+#var situation: senario
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,7 +26,9 @@ func _ready():
 	term_sheild = $term_sheild
 	background = $background
 	pause_menu = $PauseMenu
+	#situation = $Senario
 	paused = false
+	#situation.initilize_senario(buttons, terminal)
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -42,8 +44,8 @@ func _process(delta):
 	if not paused: 
 		terminal.process_type(delta)
 
-func handle_button(id):
-	
+func handle_button(id): pass
+	#situation.handle_button_press(id)
 
 func _on_pause_menu_resume():
 	paused = false
