@@ -1,9 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://bvs8xooyxm44y"]
 
 [ext_resource type="Script" path="res://scenes/button.gd" id="1_68nkq"]
-[ext_resource type="Texture2D" uid="uid://dwvbi8gy1u0uv" path="res://assets/button_random.png" id="1_emhmn"]
-[ext_resource type="Theme" uid="uid://bwhr7djl4ost4" path="res://assets/WoMD menu button.tres" id="3_xqe8i"]
+[ext_resource type="Theme" uid="uid://ig34j4wji40y" path="res://assets/WoMD menu button.tres" id="3_xqe8i"]
 [ext_resource type="Texture2D" uid="uid://k6xarhxf4q6" path="res://assets/order_numbers/1.png" id="4_amtxo"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jg10y"]
+size = Vector2(16, 16)
 
 [node name="WoMdMenuButton" type="Control"]
 clip_contents = true
@@ -18,9 +20,11 @@ script = ExtResource("1_68nkq")
 [node name="button_icon" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(8, 8)
-texture = ExtResource("1_emhmn")
+texture = SubResource("PlaceholderTexture2D_jg10y")
 
 [node name="Button" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 theme = ExtResource("3_xqe8i")
@@ -38,7 +42,7 @@ offset_right = 144.0
 offset_bottom = 32.0
 scale = Vector2(0.25, 0.25)
 bbcode_enabled = true
-text = "[rainbow][wave][center][font_size=24]intetelect[/font_size][/center]
+text = "[color=red][pulse][center][font_size=24][ERROR][/font_size][/center]
 "
 scroll_active = false
 

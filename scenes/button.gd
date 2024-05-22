@@ -1,10 +1,13 @@
 extends Control
 
+class_name WoMDButton
+
+signal pressed
+
 var pos_indicator: Sprite2D
 var button_icon: Sprite2D
 var text: RichTextLabel
 var button: Button
-var togg
 
 var RESOURCEMAP_POSITION_INDICATOR = {
 	1: preload("res://assets/order_numbers/1.png"),
@@ -23,9 +26,12 @@ func _ready():
 	button_icon = $button_icon
 	text = $button_name
 	button = $Button
-	togg = false
+
+func initalize(m_show, button_text, icon_asset):
+	button_icon.texture = icon_asset
+	text.text = button_text
+	if m_show: show()
 	
-func _process(delta):
 	pass
 
 func set_order(pos):
@@ -34,11 +40,5 @@ func set_order(pos):
 		pos_indicator.texture = RESOURCEMAP_POSITION_INDICATOR[pos]
 		pos_indicator.show()
 		
-
 func _on_button_pressed():
-	print("Hel")
-	if togg: 
-		set_order(0)
-	else: 
-		set_order(3)
-	togg = !togg
+	emit_signal("pressed")

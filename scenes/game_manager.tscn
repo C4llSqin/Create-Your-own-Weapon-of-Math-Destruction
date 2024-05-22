@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://x3dpr6ldtqxa"]
+[gd_scene load_steps=10 format=3 uid="uid://x3dpr6ldtqxa"]
 
 [ext_resource type="Texture2D" uid="uid://b73w54ikgpy2h" path="res://assets/table.png" id="1_43n5y"]
 [ext_resource type="Script" path="res://scenes/game_manager.gd" id="1_h3ptt"]
 [ext_resource type="Texture2D" uid="uid://dpe2mimosfi62" path="res://assets/terminal.png" id="2_4h5ai"]
+[ext_resource type="PackedScene" uid="uid://7e7kk8e6juhe" path="res://scenes/senarios/senario.tscn" id="2_a68nf"]
 [ext_resource type="Script" path="res://scripts/Terminal.gd" id="2_q6cju"]
 [ext_resource type="Texture2D" uid="uid://cydqvc1x6ummc" path="res://assets/button_box.png" id="4_kcq4x"]
-[ext_resource type="Theme" uid="uid://b47h72l8mxxfr" path="res://assets/terminal.tres" id="4_mxwqg"]
-[ext_resource type="Texture2D" uid="uid://dwvbi8gy1u0uv" path="res://assets/button_random.png" id="5_lkptv"]
+[ext_resource type="Theme" path="res://assets/terminal.tres" id="4_mxwqg"]
 [ext_resource type="PackedScene" uid="uid://bvs8xooyxm44y" path="res://scenes/WoMD menu button.tscn" id="5_ud061"]
+[ext_resource type="PackedScene" uid="uid://btsbdx5p45saq" path="res://scenes/pause_menu.tscn" id="8_leijc"]
 
 [node name="GameManager" type="Control"]
 layout_mode = 3
@@ -20,6 +21,8 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(40, 40)
 script = ExtResource("1_h3ptt")
+
+[node name="Senario" parent="." instance=ExtResource("2_a68nf")]
 
 [node name="background" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -81,85 +84,106 @@ scroll_following = true
 visible_characters = 0
 visible_ratio = 0.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="ButtonBox" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(24, 17)
 texture = ExtResource("4_kcq4x")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(681, 609)
-scale = Vector2(5, 5)
-texture = ExtResource("5_lkptv")
+[node name="button0" parent="ButtonBox" instance=ExtResource("5_ud061")]
+visible = false
+offset_left = -15.0
+offset_top = -3.0
+offset_right = 33.0
+offset_bottom = 13.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.125, 0.125)
 
-[node name="WoMdMenuButton" parent="." instance=ExtResource("5_ud061")]
-layout_mode = 0
+[node name="button1" parent="ButtonBox" instance=ExtResource("5_ud061")]
+visible = false
+offset_left = -7.0
+offset_top = -3.0
+offset_right = 41.0
+offset_bottom = 13.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.125, 0.125)
+
+[node name="button2" parent="ButtonBox" instance=ExtResource("5_ud061")]
+visible = false
+offset_left = 0.999998
+offset_top = -3.0
+offset_right = 49.0
+offset_bottom = 13.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.125, 0.125)
+
+[node name="button3" parent="ButtonBox" instance=ExtResource("5_ud061")]
+visible = false
 offset_left = 9.0
-offset_top = 18.0
+offset_top = -3.0
 offset_right = 57.0
-offset_bottom = 35.0
+offset_bottom = 13.0
 grow_horizontal = 1
 grow_vertical = 1
 scale = Vector2(0.125, 0.125)
 
-[node name="WoMdMenuButton2" parent="." instance=ExtResource("5_ud061")]
+[node name="button4" parent="ButtonBox" instance=ExtResource("5_ud061")]
+visible = false
+offset_left = -15.0
+offset_top = 1.0
+offset_right = 33.0
+offset_bottom = 18.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.125, 0.125)
+
+[node name="button5" parent="ButtonBox" instance=ExtResource("5_ud061")]
+visible = false
+offset_left = -7.0
+offset_top = 1.0
+offset_right = 41.0
+offset_bottom = 17.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.125, 0.125)
+
+[node name="button6" parent="ButtonBox" instance=ExtResource("5_ud061")]
+visible = false
+offset_left = 0.999998
+offset_top = 1.0
+offset_right = 49.0
+offset_bottom = 17.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.125, 0.125)
+
+[node name="button7" parent="ButtonBox" instance=ExtResource("5_ud061")]
+visible = false
 offset_left = 9.0
-offset_top = 14.0
+offset_top = 1.0
 offset_right = 57.0
-offset_bottom = 30.0
+offset_bottom = 17.0
 grow_horizontal = 1
 grow_vertical = 1
 scale = Vector2(0.125, 0.125)
 
-[node name="WoMdMenuButton3" parent="." instance=ExtResource("5_ud061")]
-offset_left = 17.025
-offset_top = 14.025
-offset_right = 65.025
-offset_bottom = 30.025
-grow_horizontal = 1
-grow_vertical = 1
-scale = Vector2(0.125, 0.125)
+[node name="PauseMenu" parent="." instance=ExtResource("8_leijc")]
+visible = false
+z_index = 1
+layout_mode = 1
+offset_right = 1872.0
+offset_bottom = 1053.0
+scale = Vector2(0.025, 0.025)
 
-[node name="WoMdMenuButton4" parent="." instance=ExtResource("5_ud061")]
-offset_left = 17.325
-offset_top = 17.725
-offset_right = 65.325
-offset_bottom = 33.725
-grow_horizontal = 1
-grow_vertical = 1
-scale = Vector2(0.125, 0.125)
-
-[node name="WoMdMenuButton5" parent="." instance=ExtResource("5_ud061")]
-offset_left = 32.775
-offset_top = 17.975
-offset_right = 80.775
-offset_bottom = 34.975
-grow_horizontal = 1
-grow_vertical = 1
-scale = Vector2(0.125, 0.125)
-
-[node name="WoMdMenuButton6" parent="." instance=ExtResource("5_ud061")]
-offset_left = 32.95
-offset_top = 13.9
-offset_right = 80.95
-offset_bottom = 29.9
-grow_horizontal = 1
-grow_vertical = 1
-scale = Vector2(0.125, 0.125)
-
-[node name="WoMdMenuButton7" parent="." instance=ExtResource("5_ud061")]
-offset_left = 25.1
-offset_top = 18.05
-offset_right = 73.1
-offset_bottom = 34.05
-grow_horizontal = 1
-grow_vertical = 1
-scale = Vector2(0.125, 0.125)
-
-[node name="WoMdMenuButton8" parent="." instance=ExtResource("5_ud061")]
-offset_left = 25.2
-offset_top = 14.075
-offset_right = 73.2
-offset_bottom = 30.075
-grow_horizontal = 1
-grow_vertical = 1
-scale = Vector2(0.125, 0.125)
+[connection signal="done_typing" from="Terminal" to="." method="_on_terminal_done_typing"]
+[connection signal="pressed" from="ButtonBox/button0" to="." method="_on_button_0_pressed"]
+[connection signal="pressed" from="ButtonBox/button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="ButtonBox/button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="ButtonBox/button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="ButtonBox/button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="ButtonBox/button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="ButtonBox/button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="ButtonBox/button7" to="." method="_on_button_7_pressed"]
+[connection signal="resume" from="PauseMenu" to="." method="_on_pause_menu_resume"]
