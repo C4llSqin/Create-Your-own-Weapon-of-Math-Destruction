@@ -1,11 +1,15 @@
 class_name senario
 
+signal senarioOver
+
 var button_array: Array[WoMDButton]
 var term: terminal
 
 var order_array: Array[int]
 
 var SIMULATION_TARGET: int = 10
+
+@export var name = "BlankSenario"
 
 func create_person():# -> person:
 	var rng = RandomNumberGenerator.new()
@@ -42,7 +46,7 @@ func hide_all():
 	for button in button_array: button.hide()
 
 func handle_dialog_end():
-	pass
+	emit_signal("senarioOver")
 
 func offer_choice(dict: Array[Dictionary]):
 	hide_all()

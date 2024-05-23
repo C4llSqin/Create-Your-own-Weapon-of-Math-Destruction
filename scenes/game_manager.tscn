@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dpe2mimosfi62" path="res://assets/terminal.png" id="2_4h5ai"]
 [ext_resource type="Script" path="res://scripts/Terminal.gd" id="2_q6cju"]
 [ext_resource type="Texture2D" uid="uid://cydqvc1x6ummc" path="res://assets/button_box.png" id="4_kcq4x"]
-[ext_resource type="Theme" path="res://assets/terminal.tres" id="4_mxwqg"]
+[ext_resource type="Theme" uid="uid://b47h72l8mxxfr" path="res://assets/terminal.tres" id="4_mxwqg"]
 [ext_resource type="PackedScene" uid="uid://bvs8xooyxm44y" path="res://scenes/WoMD menu button.tscn" id="5_ud061"]
 [ext_resource type="PackedScene" uid="uid://btsbdx5p45saq" path="res://scenes/pause_menu.tscn" id="8_leijc"]
 

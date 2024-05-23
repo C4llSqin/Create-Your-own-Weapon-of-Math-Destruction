@@ -26,8 +26,19 @@ func _ready():
 	term_sheild = $term_sheild
 	background = $background
 	pause_menu = $PauseMenu
-	situation = survey.new(buttons, term)
+	situation = null
 	paused = false
+	
+	if not FileAccess.file_exists("user://person.json"):
+		loadSenerio()
+
+func loadSenerio(type: senario):
+	if situation != null:
+		situation.senarioOver.disconnect(on_senario_Over)
+	situation = type.new(buttons, term)
+
+func on_senario_Over():
+	loadSenerio()
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
