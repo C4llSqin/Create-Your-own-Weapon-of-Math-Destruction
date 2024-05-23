@@ -18,12 +18,13 @@ offset_bottom = 1080.0
 color = Color(0.145098, 0.145098, 0.145098, 0.878431)
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
+visible = false
 layout_mode = 0
 offset_top = 1056.0
 offset_right = 320.0
 offset_bottom = 1080.0
 bbcode_enabled = true
-text = "Version [color=yellow]A_0_0_6_PAUSE"
+text = "Version [color=yellow]A_0_0_7_SURVEY"
 scroll_active = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
@@ -44,6 +45,7 @@ offset_bottom = 317.0
 text = "Resume"
 
 [node name="Quit" type="Button" parent="."]
+layout_mode = 0
 offset_left = 800.0
 offset_top = 407.0
 offset_right = 1120.0

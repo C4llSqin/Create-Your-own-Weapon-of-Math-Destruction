@@ -41,6 +41,7 @@ offset_left = 16.0
 offset_right = 144.0
 offset_bottom = 32.0
 scale = Vector2(0.25, 0.25)
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "[color=red][pulse][center][font_size=24][ERROR][/font_size][/center]
 "

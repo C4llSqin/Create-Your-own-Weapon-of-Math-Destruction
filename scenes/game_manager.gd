@@ -1,13 +1,13 @@
 extends Control
 
 var buttons: Array[WoMDButton]
-var terminal: Node
+var term: Node
 var button_box: Sprite2D
 var term_sheild: Sprite2D
 var background: Sprite2D
 var pause_menu: Control
 var paused: bool
-#var situation: senario
+var situation: senario
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,14 +21,13 @@ func _ready():
 		$ButtonBox/button6,
 		$ButtonBox/button7
 	]
-	terminal = $Terminal
+	term = $Terminal
 	button_box = $ButtonBox
 	term_sheild = $term_sheild
 	background = $background
 	pause_menu = $PauseMenu
-	#situation = $Senario
+	situation = survey.new(buttons, term)
 	paused = false
-	#situation.initilize_senario(buttons, terminal)
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -37,22 +36,22 @@ func _input(event):
 		paused = !paused
 	if not paused:
 		if event.is_action_pressed("ui_accept"):
-			terminal.skip()
+			term.skip()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if not paused: 
-		terminal.process_type(delta)
+		term.process_type(delta)
 
-func handle_button(id): pass
-	#situation.handle_button_press(id)
+func handle_button(id): 
+	situation.handle_button_press(id)
 
 func _on_pause_menu_resume():
 	paused = false
 	pause_menu.hide() # Replace with function body.
 
 func _on_terminal_done_typing():
-	for button in buttons: button.show()
+	situation.handle_dialog_end()
 
 func _on_button_0_pressed(): handle_button(0)
 func _on_button_1_pressed(): handle_button(1) 

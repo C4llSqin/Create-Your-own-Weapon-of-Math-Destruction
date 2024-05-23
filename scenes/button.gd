@@ -31,8 +31,6 @@ func initalize(m_show, button_text, icon_asset):
 	button_icon.texture = icon_asset
 	text.text = button_text
 	if m_show: show()
-	
-	pass
 
 func set_order(pos):
 	if pos == 0: pos_indicator.hide()
