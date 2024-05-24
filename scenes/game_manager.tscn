@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://x3dpr6ldtqxa"]
 
 [ext_resource type="Texture2D" uid="uid://b73w54ikgpy2h" path="res://assets/table.png" id="1_43n5y"]
-[ext_resource type="Script" path="res://scenes/game_manager.gd" id="1_h3ptt"]
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_h3ptt"]
 [ext_resource type="Texture2D" uid="uid://dpe2mimosfi62" path="res://assets/terminal.png" id="2_4h5ai"]
 [ext_resource type="Script" path="res://scripts/Terminal.gd" id="2_q6cju"]
 [ext_resource type="Texture2D" uid="uid://cydqvc1x6ummc" path="res://assets/button_box.png" id="4_kcq4x"]
-[ext_resource type="Theme" uid="uid://b47h72l8mxxfr" path="res://assets/terminal.tres" id="4_mxwqg"]
+[ext_resource type="Theme" path="res://assets/terminal.tres" id="4_mxwqg"]
 [ext_resource type="PackedScene" uid="uid://bvs8xooyxm44y" path="res://scenes/WoMD menu button.tscn" id="5_ud061"]
 [ext_resource type="PackedScene" uid="uid://btsbdx5p45saq" path="res://scenes/pause_menu.tscn" id="8_leijc"]
 
@@ -51,32 +51,6 @@ offset_right = 1720.0
 offset_bottom = 200.0
 theme = ExtResource("4_mxwqg")
 bbcode_enabled = true
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque maximus et est eget ullamcorper. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi a sapien dignissim, pharetra quam non, pulvinar leo. Proin nec fringilla turpis, vitae suscipit arcu. Nam suscipit magna at lacus lobortis, a elementum velit condimentum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum posuere convallis odio, at sagittis purus. Fusce fermentum tempor tellus, nec sollicitudin ligula auctor non. Nullam sagittis tellus eu congue lacinia. Nunc sit amet lacus neque. Nam tincidunt volutpat est, vel hendrerit mi vestibulum id. Aliquam porta arcu quis diam faucibus, euismod tincidunt felis euismod. Aenean efficitur velit vitae nisi euismod, ac congue nibh porta. Phasellus eget nunc leo. Nam ut libero varius mi convallis elementum sed scelerisque dui. Mauris rhoncus dictum ante, eget rhoncus arcu vulputate sit amet.
-
-Ut eu pellentesque mauris, ut commodo nisl. Morbi lobortis purus at aliquam placerat. Sed ullamcorper nulla eros, in cursus est suscipit non. Phasellus in libero in ligula convallis gravida vitae eget tellus. Mauris aliquam est sed eleifend ullamcorper. Proin quis nunc nisi. Integer varius tincidunt neque, vel congue sapien lobortis ut. Pellentesque semper facilisis elit, a ornare eros. Suspendisse euismod dapibus hendrerit. Vestibulum eget felis in lorem interdum facilisis. Praesent malesuada placerat diam nec euismod. Phasellus bibendum molestie sapien vitae euismod. Curabitur molestie nisl dignissim, congue massa et, sodales sapien. Nulla dapibus arcu vulputate suscipit aliquam.
-
-Suspendisse potenti. Quisque commodo nisl a ligula blandit, non maximus nisl luctus. Vivamus ac orci eget mi convallis convallis eget sed leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla scelerisque leo eu diam fermentum, vitae eleifend urna sodales. Aenean sollicitudin urna quis velit ornare, rhoncus mattis lectus mattis. Quisque lorem eros, mollis id leo ac, tempus convallis nisi. Curabitur pulvinar, lacus et tempus gravida, sem arcu feugiat orci, id ultrices lacus lorem porta sapien. Pellentesque accumsan orci ut ex aliquam pharetra. Maecenas fringilla nunc ac auctor dapibus. Nam ac elit tincidunt, euismod urna vel, porta ligula. Phasellus nunc enim, pellentesque non velit volutpat, mollis sagittis nulla. Suspendisse potenti. Integer libero diam, dictum nec condimentum ut, elementum tristique purus. Fusce vitae consectetur urna. Praesent non diam velit.
-
-Nulla facilisi. Curabitur malesuada hendrerit ligula, vitae euismod erat tempus consequat. Nam dolor leo, dictum sit amet egestas mattis, faucibus in neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum in metus massa. Maecenas ut augue tortor. Praesent sit amet suscipit ante, fermentum iaculis nisl. Morbi dignissim turpis eu massa fringilla ultrices. Etiam turpis justo, dignissim fringilla placerat quis, euismod at ipsum. Mauris semper, eros tristique posuere pulvinar, libero justo porta purus, id aliquam purus lacus ultrices odio. Nulla interdum lobortis porta. Nulla pretium massa eu elit egestas, non aliquam arcu convallis.
-
-In eu mi leo. Donec sagittis accumsan est, eget gravida diam. Sed at pharetra lorem. Proin pretium, libero sit amet elementum fringilla, urna dolor facilisis nulla, quis pretium nisl metus et magna. Maecenas aliquam erat magna. Ut quis mauris aliquam, ornare sem id, efficitur eros. Proin elit tortor, consequat et laoreet sit amet, mollis in nunc. Morbi placerat ultricies mauris eu ullamcorper. Nam ut ante id nisl rhoncus mattis.
-
-[wave]Hello this is an log entry[/wave]
-
-
-z
-
-
-z
-
-
-z
-z
-z
-z
-z
-z
-z"
 scroll_following = true
 visible_characters = 0
 visible_ratio = 0.0

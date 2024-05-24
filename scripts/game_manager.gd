@@ -29,16 +29,20 @@ func _ready():
 	situation = null
 	paused = false
 	
-	if not FileAccess.file_exists("user://person.json"):
-		loadSenerio()
-
-func loadSenerio(type: senario):
+	if not FileAccess.file_exists("user://person.json"): loadSenerio(survey)
+	else: loadSenerio(senario_chooser)
+	
+func loadSenerio(type):
 	if situation != null:
 		situation.senarioOver.disconnect(on_senario_Over)
 	situation = type.new(buttons, term)
-
+	situation.connect("senarioOver", on_senario_Over)
+	
 func on_senario_Over():
-	loadSenerio()
+	if is_instance_of(situation, senario_chooser):
+		loadSenerio(situation.target)
+	else:
+		loadSenerio(senario_chooser)
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):

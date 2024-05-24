@@ -4,12 +4,19 @@ signal senarioOver
 
 var button_array: Array[WoMDButton]
 var term: terminal
-
+var proceed = load("res://assets/button_icons/proceed.png")
 var order_array: Array[int]
 
-var SIMULATION_TARGET: int = 10
+var num_simulate: int
+var button_offers: Array
+var required_components: int
+var proceedopt: bool
 
-@export var name = "BlankSenario"
+var introdiolog: String
+var missiondiolog: String
+
+static func get_name() -> String:
+	return "Blank Senerio"
 
 func create_person():# -> person:
 	var rng = RandomNumberGenerator.new()
@@ -27,14 +34,84 @@ func create_person():# -> person:
 		credit = rng.randi_range(0, 4)
 	
 	return person.new(age, income, gender, credit, sat, crime)
-	
+
+func diolog(text: String):
+	term.typeout(text)
+	hide_all()
 
 func _init(buttonarr, ter):
 	button_array = buttonarr
 	term = ter
 	order_array = []
+	button_offers = [
+		{"name": "age", "asset": load("res://assets/button_icons/red.png"), "callable": components.evaluate_age},
+		{"name": "age", "asset": load("res://assets/button_icons/red.png"), "callable": components.evaluate_age},
+		{"name": "age", "asset": load("res://assets/button_icons/red.png"), "callable": components.evaluate_age},
+		{"name": "age", "asset": load("res://assets/button_icons/red.png"), "callable": components.evaluate_age}
+	]
+	#diolog("null")
+	num_simulate = 10
+	required_components = 4
+	proceedopt = false
+	
+	introdiolog   = "Heya#1"
+	missiondiolog = "Heya#2"
+	intro()
+
+func intro():
+	diolog(introdiolog)
+	proceedopt = true
+
+func report_simulation():
+	hide_all()
+	var player = person.read_from_file()
+	var stats = simulate(player)
+	var text = "[color=red]WoMD Stats:[/color]\n - [color=yellow]Your Stats:[/color]\n   * Your position in the sea of people: [color=yellow]{pos}[/color]\n   * Your [color=red]WoMD[/color] Score: {score}".format(
+		{"pos": 1 + stats[0], "score": stats[1]}
+	)
+	
+	
+	return [stats, text]
+
+func simulate(added: person):# -> Array:
+	var people = []
+	var diolog_text = ""
+	var componentss = []
+	var i = 0
+	var max = 0
+	for id in order_array:
+		componentss.append({'call': button_offers[id]["callable"], 'weight': len(order_array) - i})
+		max += len(order_array) - i
+		i += 1
+		
+	for j in range(num_simulate - 1):
+		people.append(create_person())
+	people.append(added)
+	var model = WoMD.new(componentss)
+	model.sort_array(people)
+	var pos = -23
+	for k in range(people.size()):
+		if added.equal(people[k]): 
+			pos = k
+			break
+	return [pos, model.process_person(added), max]
 
 func handle_button_press(id):
+	if proceedopt:
+		if order_array.size() == required_components:
+			emit_signal("senarioOver")
+			return
+		else:
+			diolog(missiondiolog)
+			proceedopt = false
+			return
+	
+	if id == 7:
+		if order_array.size() == required_components:
+			diolog(report_simulation()[1])
+			proceedopt = true
+		return
+		
 	if id in order_array: 
 		order_array.erase(id)
 		button_array[id].set_order(0)
@@ -45,11 +122,25 @@ func handle_button_press(id):
 func hide_all():
 	for button in button_array: button.hide()
 
-func handle_dialog_end():
-	emit_signal("senarioOver")
+func proceed_buttons():
+	proceedopt = true
+	offer_manual_choice([{'id': 7, 'text': "Continue", 'icon': proceed}])
 
-func offer_choice(dict: Array[Dictionary]):
+func handle_dialog_end():
+	if proceedopt:
+		proceed_buttons()
+	else:
+		offer_choice()
+
+func offer_choice():
+	hide_all()
+	var i = 0
+	for offer in button_offers:
+		button_array[i].initalize(true, offer['name'], offer['asset'])
+		i += 1
+	button_array[7].initalize(true, "Submit WoMD", proceed)
+
+func offer_manual_choice(dict):
 	hide_all()
 	for offer in dict:
 		button_array[offer['id']].initalize(true, offer['text'], offer['icon'])
-		

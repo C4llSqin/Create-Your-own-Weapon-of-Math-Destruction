@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bvs8xooyxm44y"]
 
-[ext_resource type="Script" path="res://scenes/button.gd" id="1_68nkq"]
+[ext_resource type="Script" path="res://scripts/button.gd" id="1_68nkq"]
 [ext_resource type="Theme" uid="uid://ig34j4wji40y" path="res://assets/WoMD menu button.tres" id="3_xqe8i"]
 [ext_resource type="Texture2D" uid="uid://k6xarhxf4q6" path="res://assets/order_numbers/1.png" id="4_amtxo"]
 

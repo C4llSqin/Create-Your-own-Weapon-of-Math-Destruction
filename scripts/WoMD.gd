@@ -2,16 +2,19 @@ extends Node
 
 class_name WoMD
 
-var components: Array[Dictionary]
+var componentss
 
 func _init(dict):
-	components = dict
+	componentss = dict
 
-func process_person(persona: person) -> float:
+func process_person(persona) -> float:
 	var score = 0
-	for sub_step in components:
+	for sub_step in componentss:
 		score += (sub_step['call'].call(persona) * sub_step['weight'])
 	return score
 
-func sort_array(people: Array[person]):
-	people.sort_custom(process_person)
+func compare_two(persona, personb):
+	return process_person(persona) > process_person(personb)
+
+func sort_array(people):
+	people.sort_custom(compare_two)

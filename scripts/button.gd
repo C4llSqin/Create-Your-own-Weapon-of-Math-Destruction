@@ -28,6 +28,7 @@ func _ready():
 	button = $Button
 
 func initalize(m_show, button_text, icon_asset):
+	pos_indicator.hide()
 	button_icon.texture = icon_asset
 	text.text = button_text
 	if m_show: show()
