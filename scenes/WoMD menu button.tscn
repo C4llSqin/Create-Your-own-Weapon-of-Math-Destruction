@@ -46,5 +46,6 @@ bbcode_enabled = true
 text = "[color=red][pulse][center][font_size=24][ERROR][/font_size][/center]
 "
 scroll_active = false
+autowrap_mode = 0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

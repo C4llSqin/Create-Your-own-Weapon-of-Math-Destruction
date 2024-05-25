@@ -5,7 +5,7 @@ class_name survey
 var progress: int
 
 static func get_name() -> String:
-	return "Survey"
+	return "Retake Survey"
 
 var RESOURCEMAP_BUTTON_ICONS = [
 	load("res://assets/button_icons/red.png"),

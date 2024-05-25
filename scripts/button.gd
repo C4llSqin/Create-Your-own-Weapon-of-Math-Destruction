@@ -33,6 +33,9 @@ func initalize(m_show, button_text, icon_asset):
 	text.text = button_text
 	if m_show: show()
 
+func set_text(button_text):
+	text.text = button_text
+
 func set_order(pos):
 	if pos == 0: pos_indicator.hide()
 	else:

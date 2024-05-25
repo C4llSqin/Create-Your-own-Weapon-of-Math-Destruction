@@ -3,9 +3,10 @@ extends senario
 class_name senario_chooser
 
 var CHOICES = [
-	senario,
+	#senario,
 	survey,
-	senario_nuke
+	senario_nuke,
+	senario_job_application
 ]
 
 var ICON = load("res://assets/button_icons/green.png")

@@ -157,4 +157,5 @@ scale = Vector2(0.025, 0.025)
 [connection signal="pressed" from="ButtonBox/button5" to="." method="_on_button_5_pressed"]
 [connection signal="pressed" from="ButtonBox/button6" to="." method="_on_button_6_pressed"]
 [connection signal="pressed" from="ButtonBox/button7" to="." method="_on_button_7_pressed"]
+[connection signal="mainmenu" from="PauseMenu" to="." method="_on_main_menu"]
 [connection signal="resume" from="PauseMenu" to="." method="_on_pause_menu_resume"]

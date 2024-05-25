@@ -8,7 +8,7 @@ func _init(dict):
 	componentss = dict
 
 func process_person(persona) -> float:
-	var score = 0
+	var score = 0.0
 	for sub_step in componentss:
 		score += (sub_step['call'].call(persona) * sub_step['weight'])
 	return score
