@@ -23,7 +23,7 @@ offset_top = 1056.0
 offset_right = 320.0
 offset_bottom = 1080.0
 bbcode_enabled = true
-text = "Version [color=yellow]FINAL_05[/color]"
+text = "Version [color=yellow]FINAL_07[/color]"
 scroll_active = false
 
 [node name="Pause menu text" type="RichTextLabel" parent="."]

@@ -50,6 +50,8 @@ func handle_button_press(id):
 		person_parts.append(id)
 		if person_parts[0] == 0: 
 			person_parts.append_array([0, 0, 0, 0])
+			pers = person.new(person_parts[0], person_parts[2], person_parts[1], person_parts[4], person_parts[3], person_parts[5])
+			pers.save()
 			progress = 6
 		else: progress += 1
 	
@@ -65,6 +67,8 @@ func handle_button_press(id):
 		person_parts.append(id)
 		if person_parts[0] == 1:
 			person_parts.append_array([0, 0])
+			pers = person.new(person_parts[0], person_parts[2], person_parts[1], person_parts[4], person_parts[3], person_parts[5])
+			pers.save()
 			progress = 6
 		else: progress += 1
 	
