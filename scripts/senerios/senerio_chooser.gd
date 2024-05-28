@@ -4,9 +4,10 @@ class_name senario_chooser
 
 var CHOICES = [
 	#senario,
-	survey,
 	senario_nuke,
-	senario_job_application
+	senario_job_application,
+	senario_credits,
+	survey
 ]
 
 var ICON = load("res://assets/button_icons/green.png")
